@@ -1,0 +1,105 @@
+.logo-empresa-negro-sin-letras img {
+    width: 300px; 
+    height: auto; 
+}
+
+.container-form{
+    border: 20px;
+    border-color: #98bf44;
+    align-items: center;
+    padding-top: 900px;
+    left: 20;
+    right: 20;
+}
+
+.custom-form {
+    margin: 20px; 
+    padding: 20px; 
+    border-radius: 10px; 
+    border-color:#98bf44;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.803); 
+    background-color: #ffffff; 
+}
+
+.header-layout {
+    background-color: #98bf44; 
+    color: white; 
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.dropdown-toggle {
+    color: white; 
+}
+
+.dropdown-item {
+    color: #98bf44; 
+}
+
+.barra-layout {
+    width: 400px !important;
+    padding: 30px !important; 
+    font-size: 1rem !important;
+    color:#98bf44 !important;
+    border-radius: 10px !important;
+}
+
+.button-layout{
+    background-color: white !important;
+    border-color: #98bf44 !important; 
+    color:#98bf44 !important;
+    border-radius: 10px !important;
+    
+}
+
+.button-layout:hover{
+    background-color: #98bf44!important;
+    color: white !important;
+    border-color: white !important;
+}
+
+.dropdown-item:hover{
+    background-color: #98bf44!important;
+    color: white !important;
+    border-color: white !important;
+}
+
+.dropdown-menu{
+    border-radius: 10px !important;
+}
+
+.custom-card {
+    border: none;
+    background: transparent; 
+    box-shadow: none; 
+}
+
+.container-perfil{
+	font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.h2-perfil{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container-profile-edit{
+    padding-bottom: 50px;
+}
+
+.button-profile:hover{
+    color: white !important;
+}
+
+.button-profile{
+    color: white !important;
+    border-radius: 10px !important;
+}
+
+.dropdown-profile:hover{
+    background-color:goldenrod !important;
+}
+
+.dropdown-profile{
+    color:black !important;
+}
+
+
