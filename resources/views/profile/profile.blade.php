@@ -22,9 +22,9 @@
                             Opciones de vendedor
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item dropdown-profile" href="#">Añadir produto en venta</a></li>
-                                <li><a class="dropdown-item dropdown-profile" href="#">Productos</a></li>
-                                <li><a class="dropdown-item dropdown-profile" href="#">Ventas</a></li>
+                                <li><a href="{{ route('plantas.create') }}" class="btn btn-primary w-100">Añadir producto en venta</a></li>
+                                <li><a href="{{ route('plantas.index') }}" class="btn btn-primary w-100">Productos</a></li>
+                                <li><a href="{{ route('plantas.ventas') }}" class="btn btn-primary w-100">Ventas</a></li>
                             </ul>
                         </div>
                     </div>

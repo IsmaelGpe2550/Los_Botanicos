@@ -15,5 +15,6 @@ class Planta extends Model
         'description',
         'price',
         'stock',
+        'user_id',
     ];
 }
