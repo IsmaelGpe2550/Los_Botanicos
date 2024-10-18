@@ -8,12 +8,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('/');
 Route::get('login_form', [AuthController::class, 'login_form'])->name('login_form');
+Route::get('/ventas', [PlantaController::class, 'ventas'])->name('plantas.ventas');
+
 
 Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::resource('users', UserController::class);
 Route::resource('plantas', PlantaController::class);
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('profile.profile', [AuthController::class, 'login_form'])->name('profile');
