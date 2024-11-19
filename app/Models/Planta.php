@@ -17,4 +17,9 @@ class Planta extends Model
         'stock',
         'user_id',
     ];
+
+    public function detalles_carrito()
+    {
+        return $this->hasMany(Detalles_carrito::class);
+    }
 }

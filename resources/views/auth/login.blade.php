@@ -35,6 +35,11 @@
                 </div>
                 <button type="submit" class="btn btn-success btn-block">Iniciar sesión</button>
             </form>
+            <br>
+            <div class="cuenta">
+                <p style="margin: 0;">¿No tienes una cuenta?</p>
+                <a href="{{ route('users.create') }}" style="margin-left: 5px;">Regístrate aquí</a>
+            </div>
         </div>
     </div>
 </div>

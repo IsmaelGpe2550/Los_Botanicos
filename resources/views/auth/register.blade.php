@@ -24,7 +24,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="name">Nombre</label>
-                    <input type="text" class="form-control casilla-color" id="name" name="name" required>
+                    <input type="text" class="form-control casilla-color" id="name" name="name" value="{{ old('name') }}"required>
                 </div>
                 <div class="form-group">
                     <label for="email">Correo Electrónico</label>

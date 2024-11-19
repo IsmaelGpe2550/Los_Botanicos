@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/views.css') }}">
+
   </head>
   <body>
     <div class="preloader">
@@ -44,7 +46,7 @@
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="#clients">Clientes</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#clients">Ver Plantas</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('index') }}">Ver Plantas</a>
                       </li>
                       @auth
                       <li class="rd-nav-item">
@@ -85,7 +87,7 @@
         </header>
         <!--Swiper-->
         <section class="section swiper-container swiper-slider bg-primary" data-autoplay="3500" data-loop="false" data-simulate-touch="false" data-effect="circle-bg" data-speed="750">
-          <div class="swiper-bg-text">Orquídeas</div>
+          <div class="swiper-bg-text">Plantas</div>
           <div class="swiper-wrapper">
             <div class="swiper-slide" data-circle-cx=".855" data-circle-cy=".5" data-circle-r=".39">
               <div class="swiper-slide-caption section-md">
@@ -94,7 +96,7 @@
                     <div class="col-lg-5">
                       <h3 class="subtitle" data-swiper-anime='{"animation":"swiperContentRide","duration":900,"delay":900}'>¡hola!</h3>
                       <h1 data-swiper-anime='{"animation":"swiperContentRide","duration":1000,"delay":1000}'>explora la belleza</h1>
-                      <p class="big" data-swiper-anime='{"animation":"swiperContentRide","duration":1100,"delay":1100}'>Sumérgete en la belleza única de nuestras orquídeas más exóticas, seleccionadas a mano incluso para los coleccionistas más exigentes.</p>
+                      <p class="big" data-swiper-anime='{"animation":"swiperContentRide","duration":1100,"delay":1100}'>Encuentra lo que desees. Puedes encontrar una gran variedad de plantas exoticas y plantas de ornato comunes.</p>
                       <p class="postitle" data-swiper-anime='{"animation":"swiperContentRide","duration":1200,"delay":1200}'>Se parte de esta experiencia</p>
                     </div>
                     <div class="box-round-wrap"><img src="{{ asset('images/programas-negra.png') }}" alt="" width="671" height="335" data-swiper-anime='{"animation":"swiperContentFade","duration":1000,"delay":1000}'/>
@@ -110,7 +112,7 @@
                     <div class="col-lg-5">
                       <h3 class="subtitle" data-swiper-anime='{"animation":"swiperContentRide","duration":900,"delay":900}'>¿buscás algo especial?</h3>
                       <h1 data-swiper-anime='{"animation":"swiperContentRide","duration":1000,"delay":1000}'>El Regalo Perfecto</h1>
-                      <p class="big" data-swiper-anime='{"animation":"swiperContentRide","duration":1100,"delay":1100}'>Sorprende a tus seres queridos con el regalo de una orquídea. Elegancia y naturaleza en su máxima expresión.</p>
+                      <p class="big" data-swiper-anime='{"animation":"swiperContentRide","duration":1100,"delay":1100}'>Sorprende a tus seres queridos con el regalo de una Planta. Alegra su vida con un un hermoso detalle.</p>
                       <p class="postitle" data-swiper-anime='{"animation":"swiperContentRide","duration":1200,"delay":1200}'>Explora opciones de regalo</p>
                     </div>
                     <div class="box-round-wrap"><img src="{{ asset('images/programas-plantas.png') }}" alt="" width="671" height="335" data-swiper-anime='{"animation":"swiperContentFade","duration":1000,"delay":1000}'/>
@@ -126,7 +128,7 @@
                     <div class="col-lg-5">
                       <h3 class="subtitle" data-swiper-anime='{"animation":"swiperContentRide","duration":900,"delay":900}'>Envío Rápido y Seguro</h3>
                       <h1 data-swiper-anime='{"animation":"swiperContentRide","duration":1000,"delay":1000}'>Recibe donde sea</h1>
-                      <p class="big" data-swiper-anime='{"animation":"swiperContentRide","duration":1100,"delay":1100}'>Recibe tus orquídeas directamente en tu puerta con nuestro servicio de entrega rápida y segura.</p>
+                      <p class="big" data-swiper-anime='{"animation":"swiperContentRide","duration":1100,"delay":1100}'>Recibe tus plantas directamente en tu puerta con nuestro servicio de entrega rápida y segura.</p>
                       <p class="postitle" data-swiper-anime='{"animation":"swiperContentRide","duration":1200,"delay":1200}'>Contactanos para conocer más sobre envíos</p>
                     </div>
                     <div class="box-round-wrap"><img src="{{ asset('images/programas-mundo.png') }}" alt="" width="671" height="335" data-swiper-anime='{"animation":"swiperContentFade","duration":1000,"delay":1000}'/>
@@ -142,7 +144,7 @@
                     <div class="col-lg-5">
                       <h3 class="subtitle" data-swiper-anime='{"animation":"swiperContentRide","duration":900,"delay":900}'>Nuestros clientes confian en nosotros</h3>
                       <h1 data-swiper-anime='{"animation":"swiperContentRide","duration":1000,"delay":1000}'>reseñas positivas</h1>
-                      <p class="big" data-swiper-anime='{"animation":"swiperContentRide","duration":1100,"delay":1100}'>Descubre por qué nuestros clientes adoran nuestras orquídeas y el servicio que ofrecemos.</p>
+                      <p class="big" data-swiper-anime='{"animation":"swiperContentRide","duration":1100,"delay":1100}'>Descubre por qué nuestros clientes adoran el servicio que ofrecemos. ¡Compradores y vendedores nos respaldan!.</p>
                       <p class="postitle" data-swiper-anime='{"animation":"swiperContentRide","duration":1200,"delay":1200}'>Visita el apartado de reseñas</p>
                     </div>
                     <div class="box-round-wrap"><img src="{{ asset('images/programas-roja.png') }}" alt="" width="671" height="335" data-swiper-anime='{"animation":"swiperContentFade","duration":1000,"delay":1000}'/>
@@ -191,72 +193,25 @@
             <h3>Que ofrecemos</h3>
             <h2>Paquetes de orquídeas</h2>
           </div>
-          <div class="row row-50 justify-content-center">
-            <div class="col-xl-4 col-md-6">
-              <!-- Product-->
-              <div class="product novi-bg bg-default">
-                <h3 class="product-title">Cymbidiumb<br>rosa</h3><img class="product-img" src="{{ asset('images/producto-cymbidium-rosa.png') }}" alt="" width="156" height="68"/>
-                <div class="product-price">
-                  <div class="product-price-header">
-                    <div class="product-price-currency">$</div>
-                    <div class="product-price-value">2999</div>
+          <body class="body-index">
+              <div class="container my-4">
+                  <div class="product-row">
+                      @foreach($plantas as $planta)
+                          <div class="product-card-landing">
+                              <a href="{{ route('plantas.show', $planta->id) }}" class="text-decoration-none text-dark">
+                                  <img src="{{ asset($planta->photo) }}" alt="{{ $planta->nombre }}" class="product-image mb-3">
+                                  <h5 class="product-name-landing">{{ $planta->name }}</h5>
+                                  <p class="product-price text-success">{{ $planta->price }} USD</p>
+                                  <p class="product-description">
+                                      {{ Str::limit($planta->description, 80) }}
+                                  </p>
+                              </a>
+                          </div>
+                      @endforeach
                   </div>
-                </div>
-                <ul>
-                  <li><strong>Orquídea:</strong> Cymbidiumb rosa: 3 baras</li>
-                  <li><strong>Maceta:</strong> Maceta de cerámica blanca.</li>
-                  <li><strong>Soporte:</strong> Soporte de madera.</li>
-                  <li><strong>Cuidado:</strong> Guía de cuidado.</li>
-                  <li><strong>Extras:</strong> Fertilizante premium.</li>
-                </ul>
-                <a class="button button-primary" href="#">Ordenar ahora</a>
-                <div><a class="link-border" href="#">Ver descripción (pdf)</a></div>
               </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-              <!-- Product-->
-              <div class="product novi-bg bg-default">
-                <h3 class="product-title">Epidendrum<br>roja</h3><img class="product-img" src="{{ asset('images/producto-epidendrum-roja.png') }}" alt="" width="156" height="68"/>
-                <div class="product-price">
-                  <div class="product-price-header">
-                    <div class="product-price-currency">$</div>
-                    <div class="product-price-value">3899</div>
-                  </div>
-                </div>
-                <ul>
-                  <li><strong>Orquídea:</strong> Epidendrum roja: 3 baras</li>
-                  <li><strong>Maceta:</strong> Maceta de cerámica decorada.</li>
-                  <li><strong>Soporte:</strong>  Soporte metálico dorado.</li>
-                  <li><strong>Cuidado:</strong> Kit de cuidado.</li>
-                  <li><strong>Extras:</strong> Fertilizante premium.</li>
-                </ul>
-                <a class="button button-primary" href="#">Ordenar ahora</a>
-                <div><a class="link-border" href="#">Ver descripción (pdf)</a></div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-              <!-- Product-->
-              <div class="product novi-bg bg-default">
-                <h3 class="product-title">Phalaenopsis<br>rosa</h3><img class="product-img" src="{{ asset('images/producto-phalaenopsis-rosa.png') }}" alt="" width="156" height="68"/>
-                <div class="product-price">
-                  <div class="product-price-header">
-                    <div class="product-price-currency">$</div>
-                    <div class="product-price-value">3199</div>
-                  </div>
-                </div>
-                <ul>
-                  <li><strong>Orquídea:</strong> Phalaenopsis rosa: 3 baras</li>
-                  <li><strong>Maceta:</strong> Maceta de cristal transparente.</li>
-                  <li><strong>Soporte:</strong>  Soporte de acero inoxidable.</li>
-                  <li><strong>Cuidado:</strong> Guía de cuidado.</li>
-                  <li><strong>Extras:</strong> Fertilizante premium.</li>
-                </ul>
-                <a class="button button-primary" href="#">Ordenar ahora</a>
-                <div><a class="link-border" href="#">Ver descripción (pdf)</a></div>
-              </div>
-            </div>
-          </div>
-          <a style="background-color: #ffffff; color: #be7a8e;" class="button button-primary" href="#">Ver más</a>
+          </body>
+          <a style="background-color: #ffffff; color: #98bf44;" class="button button-primary" href="{{ route('index') }}">Ver más</a>
         </div>
       </section>
 

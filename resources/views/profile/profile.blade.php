@@ -21,10 +21,10 @@
                             <a class="btn btn-warning dropdown-toggle button-profile w-100" href="#" role="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                             Opciones de vendedor
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a href="{{ route('plantas.create') }}" class="btn btn-primary w-100">Añadir producto en venta</a></li>
-                                <li><a href="{{ route('plantas.index') }}" class="btn btn-primary w-100">Productos</a></li>
-                                <li><a href="{{ route('plantas.ventas') }}" class="btn btn-primary w-100">Ventas</a></li>
+                            <ul class="dropdown-menu dropdown-menu-profile" aria-labelledby="dropdownMenuButton">
+                                <li><a href="{{ route('plantas.create') }}" class="btn dropdown-profile w-100">Vender un Producto</a></li>
+                                <li><a href="{{ route('plantas.index') }}" class="btn dropdown-profile w-100">Mis Productos</a></li>
+                                <li><a href="{{ route('detalles_pedidos.index') }}" class="btn dropdown-profile w-100">Mis Ventas</a></li>
                             </ul>
                         </div>
                     </div>

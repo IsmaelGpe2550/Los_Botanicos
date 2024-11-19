@@ -19,6 +19,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('profile_photo')->nullable()->default('img/profile-photos/default-profile.png');
+            $table->string('paypal_email')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

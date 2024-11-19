@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comentario;
+use App\Models\Guardados;
 use App\Models\Planta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -30,50 +32,64 @@ class PlantaController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
+        if (empty($user->paypal_email)) {
+            return redirect()->route('users.edit', ['user' => $user->id])->with('error', 'Debe registrar su cuenta de PayPal para vender productos.');
+        }
+        
         $request->validate([
             'name' => 'required',
             'description' => 'required',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validaciones para la imagen
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
     
-        // Subida de la imagen
         $image = $request->file('photo');
         $nombreArchivo = 'user_' . Auth::id() . '_' . time() . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('img/photos/'), $nombreArchivo);
-    
-        // Crear la nueva planta
+
         Planta::create([
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
             'stock' => $request->stock,
             'photo' => 'img/photos/' . $nombreArchivo,
-            'user_id' =>  Auth::id(),  // Guarda la ruta de la imagen
+            'user_id' =>  Auth::id(), 
         ]);
 
-        return redirect()->route('plantas.index')->with('success', 'Planta actualizada correctamente.');
+        return redirect()->route('plantas.index')->with('success', 'Planta añadida correctamente.');
     }
 
     /**
      * Display the specified resource.
      */
     public function show($id)
-{
-    $planta = Planta::findOrFail($id);
-    return view('plantas.planta-show', compact('planta'));
-}
+    {
+        $planta = Planta::findOrFail($id);
+        
+        $plantas = Planta::where('user_id', $planta->user_id)
+                     ->where('id', '!=', $planta->id)
+                     ->inRandomOrder()
+                     ->take(3)
+                     ->get();
 
-public function ventas()
-{
-    // Obtener las plantas del usuario autenticado
-    $plantas = Planta::where('user_id', auth()->id())->get();
+        if ($plantas->isEmpty()) {
+            $plantas = Planta::inRandomOrder()->take(3)->get();
+        }
 
-    // Retornar la vista de ventas con las plantas del usuario
-    return view('plantas.planta-venta', compact('plantas'));
-}
+        $estadoGuardado = Guardados::where('user_id', Auth::id())->where('planta_id', $id)->first();
 
+        if($estadoGuardado){
+            $guardado = true;
+        }else{
+            $guardado = false;
+        }
+
+        $comentarios = Comentario::with('user')->where('planta_id', $id)->get(); 
+
+        return view('plantas.planta-show', compact('planta', 'plantas', 'comentarios','guardado'));
+    }
 
     /**
      * Show the form for editing the specified resource.

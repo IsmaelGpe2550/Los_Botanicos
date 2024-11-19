@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-        <h1>Lista de Plantas</h1>
-        <a href="{{ route('plantas.create') }}" class="btn btn-primary">Añadir nueva planta</a>
-
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Mis Productos</h2>
+            <a href="{{ route('plantas.create') }}" class="btn button-primary">Añadir nuevo producto</a>
+        </div>
         <table class="table mt-4">
             <thead>
                 <tr>
-                    <!-- Eliminamos la columna ID -->
                     <th>Imagen</th>
                     <th>Nombre</th>
                     <th>Precio</th>
@@ -19,30 +19,23 @@
             <tbody>
                 @foreach ($plantas as $planta)
                     <tr>
-                        <!-- Imagen de la planta, con un enlace a la vista show -->
                         <td>
                             <a href="{{ route('plantas.show', $planta->id) }}">
-                                <img src="{{ asset($planta->photo) }}" alt="{{ $planta->name }}" width="100" height="100">
+                                <img src="{{ asset($planta->photo) }}" alt="{{ $planta->name }}" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
                             </a>
                         </td>
-
-                        <!-- Nombre de la planta -->
                         <td>{{ $planta->name }}</td>
-
-                        <!-- Precio de la planta -->
                         <td>${{ $planta->price }}</td>
-
-                        <!-- Stock disponible -->
                         <td>{{ $planta->stock }}</td>
-
-                        <!-- Botones para editar y eliminar -->
                         <td>
-                            <a href="{{ route('plantas.edit', $planta->id) }}" class="btn btn-sm btn-warning">Editar</a>
-                            <form action="{{ route('plantas.destroy', $planta->id) }}" method="POST" style="display:inline-block;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
-                            </form>
+                            <div class="d-flex flex-column">
+                                <a href="{{ route('plantas.edit', $planta->id) }}" class="btn btn-warning btn-sm w-100 mb-1">Editar</a>
+                                <form action="{{ route('plantas.destroy', $planta->id) }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm w-100">Eliminar</button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 @endforeach

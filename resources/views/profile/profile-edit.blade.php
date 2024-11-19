@@ -43,7 +43,11 @@
             <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Dejar vacío si no desea cambiar">
         </div>
 
-        <!-- Contenedor solo para los botones -->
+        <div class="form-group">
+            <label for="paypal_email">Correo de PayPal:</label>
+            <input type="email" class="form-control" id="paypal_email" name="paypal_email" value="{{ Auth::user()->paypal_email }}" placeholder="Ingresa tu correo de PayPal si eres vendedor">
+        </div>
+
         <div class="text-center">
             <button type="submit" class="btn btn-success w-25 me-2">Guardar Cambios</button>
         </div>

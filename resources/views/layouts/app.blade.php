@@ -37,19 +37,49 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <li><a class="dropdown-item" href="/">Inicio</a></li>
-                                <li><a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">Perfil</a></li>
-                                <li><a class="dropdown-item" href="#">Mis compras</a></li>
-                                <li><a class="dropdown-item" href="#">Guardados</a></li>
-                                <li><a class="dropdown-item" href="#">Carrito</a></li>
+                                <li><a class="dropdown-item" href="{{ route('index') }}">Ver plantas</a></li>
+
+                                @if (Auth::check())
+                                    <li><a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">Perfil</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('pedidos.index') }}">Mis compras</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('guardados_index') }}">Guardados</a></li>
+                                    @if(isset($CarritoUsuarioGlobal))
+                                        <a class="dropdown-item" href="{{ route('carritos.show', $CarritoUsuarioGlobal) }}">Carrito</a>
+                                    @else
+                                        <a class="dropdown-item" href="{{ route('sin_carrito') }}">Carrito</a>
+                                    @endif
+                                @else
+                                    <li><a class="dropdown-item" href="{{ route('login_form') }}">Iniciar sesión</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('users.create') }}">Registrarse</a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-
-        <!-- Contenido -->
         <main class="container mt-4">
+        <div class="container mt-4">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
             @yield('content')
         </main>
         <script src="{{ asset('js/preloader.js') }}"></script>

@@ -34,9 +34,15 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => [
+                'required',
+                'string',
+                'min:8',
+                'confirmed',
+                'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/'
+            ],
         ]);
-    
+        
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -75,12 +81,14 @@ class UserController extends Controller
             'description' => 'required|string|max:1000',
             'profile_photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'password' => 'nullable|string|min:8|confirmed',
+            'paypal_email' => 'nullable|email|max:255',
         ]);
     
         $user = User::findOrFail($id);
         $defaultProfilePhoto = 'img/profile-photos/default-profile.png';
     
         $user->name = $request->name;
+        $user->paypal_email = $request->paypal_email;
         $user->email = $request->email;
         $user->description = $request->description;
         $image = $request->file('profile_photo');
