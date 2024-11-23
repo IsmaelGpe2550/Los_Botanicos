@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-6">
             <h1>{{ $planta->name }}</h1>
-            <p class="text-success h4">{{ $planta->price }} USD</p>
+            <p class="text-success h4">{{ $planta->price }} MXN</p>
             <p><strong>Disponibles:</strong> {{ $planta->stock }}</p> 
             <form action="{{ route('carritos.store') }}" method="POST">
                 @csrf
@@ -51,7 +51,7 @@
                     <a href="{{ route('plantas.show', $p->id) }}" class="text-decoration-none text-dark">
                         <img src="{{ asset($p->photo) }}" alt="{{ $p->nombre }}" class="product-image mb-3">
                         <h5 class="product-name-landing">{{ $p->name }}</h5>
-                        <p class="product-price text-success">{{ $p->price }} USD</p>
+                        <p class="product-price text-success">{{ $p->price }} MXN</p>
                         <p class="product-description">
                             {{ Str::limit($p->description, 80) }}
                         </p>

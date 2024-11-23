@@ -44,8 +44,6 @@
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="#about">Nosotros</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#clients">Clientes</a>
-                      </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('index') }}">Ver Plantas</a>
                       </li>
                       @auth
@@ -145,7 +143,7 @@
                       <h3 class="subtitle" data-swiper-anime='{"animation":"swiperContentRide","duration":900,"delay":900}'>Nuestros clientes confian en nosotros</h3>
                       <h1 data-swiper-anime='{"animation":"swiperContentRide","duration":1000,"delay":1000}'>reseñas positivas</h1>
                       <p class="big" data-swiper-anime='{"animation":"swiperContentRide","duration":1100,"delay":1100}'>Descubre por qué nuestros clientes adoran el servicio que ofrecemos. ¡Compradores y vendedores nos respaldan!.</p>
-                      <p class="postitle" data-swiper-anime='{"animation":"swiperContentRide","duration":1200,"delay":1200}'>Visita el apartado de reseñas</p>
+                      <p class="postitle" data-swiper-anime='{"animation":"swiperContentRide","duration":1200,"delay":1200}'>¡Visita los comentarios!</p>
                     </div>
                     <div class="box-round-wrap"><img src="{{ asset('images/programas-roja.png') }}" alt="" width="671" height="335" data-swiper-anime='{"animation":"swiperContentFade","duration":1000,"delay":1000}'/>
                     </div>
@@ -158,40 +156,69 @@
           <div class="swiper-pagination"></div>
         </section>
       </div>
-      <!-- About-->
+    <!-- About-->
       <section class="section novi-bg novi-bg-img section-sm bg-gray-100 pb-xl-0" id="about">
-        <div class="container">
-          <div class="row row-50 flex-wrap-md-reverse flex-lg-wrap align-items-lg-center">
-            <div class="col-xl-6 col-lg-6">
-              <div class="box-custom-2"><img src="{{ asset('images/foto-nosotros.png') }}" alt="" width="455" height="342"/>
-                <div class="box-custom-2-smal">
-                  <p class="box-custom-2-name">Dulce Araceli</p>
-                  <p class="box-custom-2-position">Agronoma</p>
-                </div>
+      <div class="row mt-4">
+          <div class="col-12 text-center">
+            <img src="images/logo-empresa-negro.png" alt="Imagen de Los Botánicos" class="img-fluid" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          </div>
+      </div>  
+      <div class="container">
+        <br></br>
+          <h3 class="text-center">Acerca de Los Botánicos</h3>
+          <div class="row">
+            <!-- Historia -->
+            <div class="col-md-4">
+              <div class="info-box">
+                <h4>Quiénes Somos</h4>
+                <p>
+                  Los Botánicos nació de nuestra pasión por la naturaleza y el deseo de acercar las maravillas del mundo vegetal a todos los hogares de manera accesible y sostenible.
+                </p>
               </div>
             </div>
-            <div class="col-xl-5 col-lg-6">
-              <div class="box-custom-1">
-                <h3>Mas sobre nosotros</h3>
-                <h2>las orquídeas representan<br>exclusividad y elegancia</h2>
-                <p>Desde la antigüedad, las orquídeas han sido altamente valoradas por su forma exótica y sus colores vibrantes, lo que las convierte en una flor que destaca entre las demás.</p>
-                <ul class="list-marked">
-                  <li>Las orquídeas destacan por su belleza exótica.</li>
-                  <li>Añaden un toque de exclusividad a cualquier ambiente.</li>
-                  <li>Son una flor que representa distinción y prestigio.</li>
-                </ul><a class="button button-primary" href="#">Leer más</a>
+            <!-- Misión -->
+            <div class="col-md-4">
+              <div class="info-box">
+                <h4>Nuestra Misión</h4>
+                <p>
+                  Ofrecer a nuestros clientes la mejor selección de plantas, herramientas y conocimientos para crear espacios verdes que inspiran y transforman.
+                </p>
+              </div>
+            </div>
+            <!-- Valores -->
+            <div class="col-md-4">
+              <div class="info-box">
+                <h4>Nuestros Valores</h4>
+                <ul>
+                  <li>Compromiso con la sostenibilidad.</li>
+                  <li>Calidad en cada detalle.</li>
+                  <li>Atención al cliente personalizada.</li>
+                  <li>Amor por la naturaleza.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Por Qué Elegirnos -->
+          <div class="row mt-4">
+            <div class="col-12">
+              <div class="info-box text-center">
+                <h4>Por Qué Elegirnos</h4>
+                <p>
+                  Nos diferenciamos por nuestra atención personalizada, plantas de alta calidad y un compromiso genuino con el cuidado del medio ambiente. 
+                  ¡Únete a nuestra comunidad y transforma tus espacios con plantas que inspiran!
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       <!-- What we Offer-->
       <section class="section novi-bg novi-bg-img section-md-4 bg-primary">
         <div class="container">
           <div class="text-center">
             <h3>Que ofrecemos</h3>
-            <h2>Paquetes de orquídeas</h2>
+            <h2>Variedad y Comunidad en un Solo Lugar</h2>
+            <p class="text-center">Descubre una amplia selección de plantas ofrecidas por nuestra plataforma y nuestra comunidad de vendedores en el siguiente boton:</p>
           </div>
           <body class="body-index">
               <div class="container my-4">
@@ -201,7 +228,7 @@
                               <a href="{{ route('plantas.show', $planta->id) }}" class="text-decoration-none text-dark">
                                   <img src="{{ asset($planta->photo) }}" alt="{{ $planta->nombre }}" class="product-image mb-3">
                                   <h5 class="product-name-landing">{{ $planta->name }}</h5>
-                                  <p class="product-price text-success">{{ $planta->price }} USD</p>
+                                  <p class="product-price text-success">{{ $planta->price }} MXN</p>
                                   <p class="product-description">
                                       {{ Str::limit($planta->description, 80) }}
                                   </p>
@@ -215,30 +242,51 @@
         </div>
       </section>
 
-      <!-- How it Works-->
-      <section class="section novi-bg novi-bg-img section-md-2 bg-default">
+      <!-- How We Work -->
+      <section class="section novi-bg novi-bg-img section-sm bg-gray-100 pb-xl-0" id="how-we-work">
         <div class="container">
-          <div class="text-center">
-            <h3>Como trabajamos</h3>
-            <h2>3 pasos para obtener tu orquídea</h2>
+          <h3 class="text-center">Cómo Trabajamos</h3>
+          <div class="row">
+            <!-- Selección Cuidadosa -->
+            <div class="col-md-4 text-center">
+              <div class="info-box">
+                <img src="images/seleccion.jpg" alt="Selección Cuidadosa" class="img-fluid mb-3" style="max-height: 100px; border-radius: 50%;">
+                <h4>Selección Cuidadosa</h4>
+                <p>Cada planta que ofrecemos es seleccionada cuidadosamente por expertos para garantizar su frescura y calidad.</p>
+              </div>
+            </div>
+            <!-- Proceso de Compra -->
+            <div class="col-md-4 text-center">
+              <div class="info-box">
+                <img src="images/compras-simples.jpg" alt="Proceso de Compra" class="img-fluid mb-3" style="max-height: 100px; border-radius: 50%;">
+                <h4>Proceso de Compra Simple</h4>
+                <p>Explora nuestro catálogo, añade tus plantas favoritas al carrito y realiza tu pedido de forma segura.</p>
+              </div>
+            </div>
+            <!-- Empaque Sostenible -->
+            <div class="col-md-4 text-center">
+              <div class="info-box">
+                <img src="images/empaques.png" alt="Empaque Sostenible" class="img-fluid mb-3" style="max-height: 100px; border-radius: 50%;">
+                <h4>Empaque Sostenible</h4>
+                <p>Usamos empaques ecológicos que protegen tus plantas durante el transporte y cuidan del medio ambiente.</p>
+              </div>
+            </div>
           </div>
-          <div class="row row-50 post-classic-counter justify-content-lg-between justify-content-center">
-            <div class="col-lg-4 col-sm-6">
-              <div class="post-classic novi-bg bg-secondary-1">
-                <h3 class="post-classic-title">Escoge <br> una orquídea</h3>
-                <p class="post-classic-text">Primero, escoge uno de los paquetes que tenemos.</p>
+          <div class="row mt-4">
+            <!-- Entrega Puntual -->
+            <div class="col-md-6 text-center">
+              <div class="info-box">
+                <img src="images/puntual.jpg" alt="Entrega Puntual" class="img-fluid mb-3" style="max-height: 100px; border-radius: 50%;">
+                <h4>Entrega Puntual</h4>
+                <p>Nos aseguramos de que tus plantas lleguen puntualmente y en perfectas condiciones a tu hogar.</p>
               </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
-              <div class="post-classic novi-bg bg-secondary-2">
-                <h3 class="post-classic-title">Realiza tu pedido</h3>
-                <p class="post-classic-text">Después, proporciona tu información para la entrega.</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-              <div class="post-classic novi-bg bg-secondary-3">
-                <h3 class="post-classic-title">Confirma tu pedido <br>y espera la entrega</h3>
-                <p class="post-classic-text">Finalmente, espera la llegada de tu orquídea y sigue las instrucciones de cuidado.</p>
+            <!-- Atención al Cliente -->
+            <div class="col-md-6 text-center">
+              <div class="info-box">
+                <img src="images/atencion.jpg" alt="Atención al Cliente" class="img-fluid mb-3" style="max-height: 100px; border-radius: 50%;">
+                <h4>Atención al Cliente</h4>
+                <p>Nuestro equipo está disponible para resolver tus dudas y ofrecerte consejos sobre el cuidado de tus plantas.</p>
               </div>
             </div>
           </div>
@@ -257,7 +305,7 @@
                       <div class="icon novi-icon icon-lg linearicons-diamond2"></div>
                       <h3 class="box-icon-title">Calidad</h3>
                     </div>
-                    <p class="box-icon-text">Ofrecemos orquídeas de la más alta calidad, cultivadas y seleccionadas con esmero para garantizar su salud, belleza y longevidad. .</p>
+                    <p class="box-icon-text">Ofrecemos plantas seleccionadas de la más alta calidad, cultivadas con cuidado por expertos y vendedores confiables, garantizando su salud y belleza.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -266,7 +314,7 @@
                       <div class="icon novi-icon icon-lg linearicons-leaf"></div>
                       <h3 class="box-icon-title">Variedad y exclusividad</h3>
                     </div>
-                    <p class="box-icon-text">Disponemos de una amplia y exclusiva colección de orquídeas, que abarca desde las especies más clásicas hasta ejemplares raros y difíciles de encontrar.</p>
+                    <p class="box-icon-text">Encuentra una amplia variedad de plantas, desde populares suculentas hasta ejemplares únicos. Todo en un solo lugar gracias a nuestra comunidad de vendedores y proveedores.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -275,7 +323,7 @@
                       <div class="icon novi-icon icon-lg linearicons-chef"></div>
                       <h3 class="box-icon-title">Experiencia</h3>
                     </div>
-                    <p class="box-icon-text">Nuestro equipo está compuesto por expertos que conocen cada detalle sobre las orquídeas.</p>
+                    <p class="box-icon-text">Nuestro equipo y nuestra comunidad comparten años de experiencia en el cuidado, cultivo y comercialización de plantas, asegurando confianza en cada compra.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -284,7 +332,7 @@
                       <div class="icon novi-icon icon-lg linearicons-egg2"></div>
                       <h3 class="box-icon-title">Atención personalizada</h3>
                     </div>
-                    <p class="box-icon-text">Brindamos atencíon en cada momento, desde tu selección hasta la entrega de tus orquídeas.</p>
+                    <p class="box-icon-text">Estamos aquí para ayudarte en cada paso: desde elegir la planta ideal hasta asegurar su entrega en perfecto estado.</p>
                   </div>
                 </div>
               </div>
@@ -292,58 +340,16 @@
           </div>
         </div>
         <div class="box-custom-3">
-          <div class="box-custom-3-img-wrap"><img src="{{ asset('images/circulo-azul.png') }}" alt="" width="382" height="187"/>
+          <div class="box-custom-3-img-wrap"><img src="{{ asset('images/suculentas.jpg') }}" alt="" width="382" height="187"/>
           </div>
-          <div class="box-custom-3-img-wrap"><img src="{{ asset('images/circulo-amarilla.png') }}" alt="" width="382" height="187"/>
+          <div class="box-custom-3-img-wrap"><img src="{{ asset('images/ornamentales.png') }}" alt="" width="382" height="187"/>
           </div>
-          <div class="box-custom-3-img-wrap"><img src="{{ asset('images/circulo-naranja.png') }}" alt="" width="382" height="187"/>
+          <div class="box-custom-3-img-wrap"><img src="{{ asset('images/frutales.jpg') }}" alt="" width="382" height="187"/>
           </div>
-          <div class="box-custom-3-img-wrap"><img src="{{ asset('images/circulo-morada.png') }}" alt="" width="382" height="187"/>
-          </div>
-        </div>
-      </section>
-
-      <!-- Testimonials-->
-      <section class="section novi-bg novi-bg-img section-md-3 bg-default" id="clients">
-        <div class="container">
-          <div class="row row-40 align-items-center">
-            <div class="col-lg-6">
-              <div class="owl-pagination-custom" id="owl-pagination-custom">
-                <div class="data-dots-custom" data-owl-item="0"><img src="{{ asset('images/mujer-1.png') }}" alt="" width="179" height="89"/>
-                </div>
-                <div class="data-dots-custom" data-owl-item="1"><img src="{{ asset('images/mujer-2.png') }}" alt="" width="306" height="153"/>
-                </div>
-                <div class="data-dots-custom" data-owl-item="2"><img src="{{ asset('images/hombre-1.png') }}" alt="" width="179" height="89"/>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <h3>Que dicen nuestros clientes</h3>
-              <h2>Testimonios</h2>
-              <!-- Owl Carousel-->
-              <div class="quote-classic-wrap">
-                <div class="quote-classic-img"><img src="{{ asset('images/quote-37x29.png') }}" alt="" width="37" height="14"/>
-                </div>
-                <div class="owl-carousel owl-carousel-classic" data-items="1" data-dots="true" data-loop="false" data-autoplay="false" data-mouse-drag="false" data-dots-custom="#owl-pagination-custom">
-                  <div class="quote-classic">
-                    <p class="big">Las orquídeas que compré en esta tienda son simplemente espectaculares. La calidad de las flores es insuperable, y el servicio fue excepcional. ¡Definitivamente volveré a comprar aquí!</p>
-                    <h3 class="quote-classic-name">Sofía G.</h3>
-                  </div>
-                  <div class="quote-classic">
-                    <p class="big">La variedad de orquídeas disponibles es increíble. Encontré una especie rara que había estado buscando por mucho tiempo, y llegó en perfectas condiciones. ¡Muy recomendable!</p>
-                    <h3 class="quote-classic-name">Laura M.</h3>
-                  </div>
-                  <div class="quote-classic">
-                    <p class="big">Quedé impresionada con la atención personalizada que recibí. Me ayudaron a elegir la orquídea perfecta para regalar, y fue un éxito total. El empaque fue elegante y seguro.</p>
-                    <h3 class="quote-classic-name">Carlos R.</h3>
-                  </div>
-                </div>
-              </div><a class="button button-primary button-sm" href="#">Envia tu reseña</a>
-            </div>
+          <div class="box-custom-3-img-wrap"><img src="{{ asset('images/unica.jpg') }}" alt="" width="382" height="187"/>
           </div>
         </div>
       </section>
-
       <footer class="section footer-classic">
         <div class="container">
           <div class="row row-50 justify-content-between">
@@ -365,7 +371,7 @@
                     <li>
                       <dl class="footer-classic-dl">
                         <dt>Correo.</dt>
-                        <dd><a href="mailto:#">dulceorquidea99@gmail.com</a></dd>
+                        <dd><a href="mailto:#">losbotanicos99@gmail.com</a></dd>
                       </dl>
                     </li>
                   </ul>
