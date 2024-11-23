@@ -19,6 +19,7 @@ Route::get('index', [HomeController::class, 'index'])->name('index');
 Route::get('guardados_index', [GuardadosController::class, 'guardados_index'])->name('guardados_index');
 Route::get('sin_carrito', [HomeController::class, 'sin_carrito'])->name('sin_carrito');
 Route::get('pago_form', [PaypalController::class, 'pago_form'])->name('pago_form');
+Route::get('/search', [HomeController::class, 'search'])->name('search');
 
 
 

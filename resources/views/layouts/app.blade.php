@@ -23,11 +23,17 @@
                         <img src="{{ asset('images/logo-empresa-blanco.png') }}" alt="Logo" width="200px" height="auto">
                     </div>
                     <div class="col-auto">
-                        <form class="form-inline">
-                            <div class="input-group">
-                                <input class="form-control barra-layout" type="search" placeholder="Buscar..." aria-label="Buscar">
-                                <button class="btn btn-outline-light button-layout" type="submit">Buscar</button>
-                            </div>
+                    <form class="form-inline" action="{{ route('search') }}" method="GET">
+                        <div class="input-group">
+                            <input 
+                                class="form-control barra-layout" 
+                                type="search" 
+                                name="query" 
+                                placeholder="Buscar..." 
+                                aria-label="Buscar" 
+                                value="{{ request('query') }}">
+                            <button class="btn btn-outline-light button-layout" type="submit">Buscar</button>
+                        </div>
                         </form>
                     </div>
                     <div class="col-auto">

@@ -53,6 +53,16 @@ class PedidosController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre_completo' => 'required|string|max:255',
+            'direccion' => 'required|string|max:500',
+            'colonia' => 'required|string|max:255',
+            'ciudad' => 'required|string|max:255',
+            'estado' => 'required|string|max:255',
+            'codigo_postal' => 'required|digits:5',
+            'telefono' => 'required|digits_between:10,15',
+        ]);
+
         $clientId = env('PAYPAL_CLIENT_ID');
         $clientSecret = env('PAYPAL_CLIENT_SECRET');
 
